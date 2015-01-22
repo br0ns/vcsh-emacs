@@ -1,0 +1,11 @@
+*
+!/.gitignore.d
+!/.gitignore.d/emacs
+!/.emacs.d
+!/.emacs.d/config/*
+!/.emacs.d/defuns/*
+!/.emacs.d/global-key-bindings.el
+!/.emacs.d/init.el
+!/.emacs.d/install-packages.el
+!/.emacs.d/install-packages.sh
+!/.emacs.d/settings.el
