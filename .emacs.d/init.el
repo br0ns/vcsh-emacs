@@ -5,14 +5,19 @@
 ;; Enable backtrace when errors occur
 ;; (setq debug-on-error t)
 
-;; Add `user-emacs-directory' to load path so `settings.el' can be found
-(add-to-list 'load-path user-emacs-directory)
+;; Add `<user-emacs-directory>/settings' to load path so `settings.el' can be
+;; found
+(defvar config-settings-dir
+  (expand-file-name "settings" user-emacs-directory)
+  "This directory holds the configuration of emacs and its packages"
+  )
+(add-to-list 'load-path config-settings-dir)
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
 ;; General settings are stored in
-;; `<user-emacs-directory>/settings.el'
+;; `<user-emacs-directory>/settings/settings.el'
 (require 'settings)
 
 ;; Add to load path
@@ -26,8 +31,9 @@
 ;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
-;; Keep changes made through Emacs' customize UI in this file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; Keep changes made through Emacs' customize interface in
+;; `<user-emacs-directory>/settings/custom.el'
+(setq custom-file (expand-file-name "custom.el" config-settings-dir))
 
 ;; Initialize package manager
 (package-initialize)
