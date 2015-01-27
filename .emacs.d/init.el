@@ -74,3 +74,6 @@
 (require 'defuns-files)
 (require 'defuns-misc)
 (require 'evil-numbers)
+
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode locate")))
