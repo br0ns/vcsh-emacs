@@ -32,16 +32,16 @@ This functions should be added to the hooks of major modes for programming."
       )
 
 ;; enable on-the-fly syntax checking
-;(if (fboundp 'global-flycheck-mode)
-;    (global-flycheck-mode t)
-;  (add-hook 'prog-mode-hook 'flycheck-mode)
-;  )
+(if (fboundp 'global-flycheck-mode)
+   (global-flycheck-mode t)
+ (add-hook 'prog-mode-hook 'flycheck-mode)
+ )
 
-;(when config-diminish-flycheck
-;  (add-hook 'flycheck-mode-hook (lambda ()
-;                                  (diminish 'flycheck-mode)
-;                                  )
-;            )
-;)
+(when config-diminish-flycheck
+ (add-hook 'flycheck-mode-hook (lambda ()
+                                 (diminish 'flycheck-mode)
+                                 )
+           )
+)
 
 (provide 'config-prog-mode)

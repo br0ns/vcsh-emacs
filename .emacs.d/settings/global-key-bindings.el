@@ -7,6 +7,8 @@
 (global-set-key (kbd "M-<up>")              'nav-scroll-previous-line)
 (global-set-key (kbd "C-M-<down>")          'nav-scroll-forward-blank-line)
 (global-set-key (kbd "C-M-<up>")            'nav-scroll-backward-blank-line)
+(global-set-key (kbd "M-S-<down>")          'nav-adjust-next-line)
+(global-set-key (kbd "M-S-<up>")            'nav-adjust-previous-line)
 (global-set-key [remap scroll-down-command] 'nav-half-page-up)
 (global-set-key [remap scroll-up-command]   'nav-half-page-down)
 (global-set-key [remap move-beginning-of-line]

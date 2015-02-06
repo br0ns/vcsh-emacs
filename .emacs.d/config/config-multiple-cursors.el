@@ -27,7 +27,7 @@
   (interactive)
   (jc/mc-search 'search-backward))
 
-(define-key mc/keymap (kbd "C-s") 'jc/mc-search-forward)
-(define-key mc/keymap (kbd "C-r") 'jc/mc-search-backward)
+(define-key mc/keymap (kbd "C-s") 'mc-search-forward)
+(define-key mc/keymap (kbd "C-r") 'mc-search-backward)
 
 (provide 'config-multiple-cursors)

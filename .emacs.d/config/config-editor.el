@@ -139,6 +139,12 @@
 (require 're-builder)
 (setq reb-re-syntax 'string)
 
+;; Always end searches at the beginning of the matching expression.
+(defun custom-goto-match-beginning ()
+  "Use with isearch hook to end search at first char of match."
+  (when isearch-forward (goto-char isearch-other-end)))
+(add-hook 'isearch-mode-end-hook 'custom-goto-match-beginning)
+
 ;; Anzu mode enhances isearch & query-replace by showing total matches
 ;; and current match position
 (require 'anzu)

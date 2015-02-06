@@ -14,11 +14,15 @@ the buffer can't scroll further."
 (defconst nav-keep-column-commands
   '(nav-scroll-forward-paragraph
     nav-scroll-backward-paragraph
+    nav-scroll-forward-blank-line
+    nav-scroll-backward-blank-line
     nav-scroll-next-line
     nav-scroll-previous-line
 
     nav-forward-paragraph
     nav-backward-paragraph
+    nav-forward-blank-line
+    nav-backward-blank-line
     nav-next-line
     nav-previous-line
 
@@ -146,6 +150,72 @@ See: `ergoemacs-forward-block'"
     )
   )
 
+(defun nav-adjust-call (fn &rest args)
+  (let* ((point-before (point))
+         (point-after (save-excursion
+                        (nav-call-abstract fn args)
+                        (point)
+                        )
+                      )
+         (going-up (< point-after point-before))
+         (scroll-lines
+          (1- (count-screen-lines point-after point-before t))
+          )
+         (scroll-lines (if going-up
+                           (- scroll-lines)
+                         scroll-lines
+                         )
+                       )
+         (can-scroll (if going-up
+                         (nav-can-scroll-up)
+                       (nav-can-scroll-down)
+                       )
+                     )
+         )
+    (when (or nav-keep-going can-scroll)
+      (condition-case nil
+          (scroll-up scroll-lines)
+        (error nil)
+        )
+      (goto-char point-before)
+      )
+    )
+  )
+
+(defun nav-adjust-forward-paragraph (&optional arg)
+  "Adjust down ARG blank-lines keeping point fixed."
+  (interactive "p")
+  (nav-adjust-call 'forward-paragraph arg)
+  )
+
+(defun nav-adjust-backward-paragraph (&optional arg)
+  "Adjust down ARG blank-lines keeping point fixed."
+  (interactive "p")
+  (nav-adjust-call 'backward-paragraph arg)
+  )
+
+(defun nav-adjust-forward-blank-line (&optional arg)
+  "Adjust down ARG blank-lines keeping point fixed."
+  (interactive "p")
+  (nav-adjust-call 'forward-blank-line arg)
+  )
+
+(defun nav-adjust-backward-blank-line (&optional arg)
+  "Adjust down ARG blank-lines keeping point fixed."
+  (interactive "p")
+  (nav-adjust-call 'backward-blank-line arg)
+  )
+
+(defun nav-adjust-next-line (&optional arg)
+  (interactive "p")
+  (nav-adjust-call 'next-line arg)
+  )
+
+(defun nav-adjust-previous-line (&optional arg)
+  (interactive "p")
+  (nav-adjust-call 'previous-line arg)
+  )
+
 (defun nav-scroll-forward-paragraph (&optional arg)
   "Scroll down ARG blank-lines keeping point fixed."
   (interactive "p")
@@ -213,7 +283,7 @@ See: `ergoemacs-forward-block'"
 (defun nav-half-page-up ()
   "Moves buffer half a page, without moving point"
   (interactive)
-  (nav-scroll-call 
+  (nav-scroll-call
    '(lambda ()
       (previous-line (/ (window-height) 2))
       )
@@ -223,7 +293,7 @@ See: `ergoemacs-forward-block'"
 (defun nav-half-page-down ()
   "Moves buffer half a page, without moving point"
   (interactive)
-  (nav-scroll-call 
+  (nav-scroll-call
    '(lambda ()
       (next-line (/ (window-height) 2))
       )
@@ -233,7 +303,7 @@ See: `ergoemacs-forward-block'"
 (defun nav-page-up ()
   "Moves buffer a page, without moving point"
   (interactive)
-  (nav-scroll-call 
+  (nav-scroll-call
    '(lambda ()
       (previous-line (window-height))
       )
@@ -243,7 +313,7 @@ See: `ergoemacs-forward-block'"
 (defun nav-page-down ()
   "Moves buffer a page, without moving point"
   (interactive)
-  (nav-scroll-call 
+  (nav-scroll-call
    '(lambda ()
       (next-line (window-height))
       )
