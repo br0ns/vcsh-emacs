@@ -1,5 +1,5 @@
 (progn
-  (add-to-list 'load-path user-emacs-directory)
+  (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
   (require 'settings)
   (add-to-list 'load-path config-defuns-dir)
   (add-to-list 'load-path config-config-dir)
