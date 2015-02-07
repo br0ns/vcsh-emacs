@@ -1,7 +1,7 @@
 (require 'multiple-cursors)
 
 ;; List of allowed functions in mc-mode
-(setq mc/list-file (expand-file-name "mc-lists.el" config-savefiles-dir))
+(setq mc/list-file (expand-file-name "mc-lists.el" config-settings-dir))
 
 ;; Disable multiple cursons on save
 (add-hook 'before-save-hook 'mc/keyboard-quit)

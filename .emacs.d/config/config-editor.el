@@ -46,11 +46,11 @@
 (setq auto-save-timeout 10)
 
 ;; Autosave the undo-tree history
-(setq undo-tree-history-directory-alist
-      `((".*" . ,(expand-file-name "undo-tree" config-savefiles-dir))
-        )
-      )
-(setq undo-tree-auto-save-history t)
+;; (setq undo-tree-history-directory-alist
+;;       `((".*" . ,(expand-file-name "undo-tree" config-savefiles-dir))
+;;         )
+;;       )
+(setq undo-tree-auto-save-history nil)
 
 ;; Enable syntax highlighting everywhere
 (global-font-lock-mode t)
