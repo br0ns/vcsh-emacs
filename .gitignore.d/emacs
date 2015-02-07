@@ -1,13 +1,13 @@
 *
 !/.emacs.d
 !/.emacs.d/config
-!/.emacs.d/config/*
+!/.emacs.d/config/*.el
 !/.emacs.d/defuns
-!/.emacs.d/defuns/*
+!/.emacs.d/defuns/*.el
 !/.emacs.d/init.el
 !/.emacs.d/install-packages.el
 !/.emacs.d/install-packages.sh
 !/.emacs.d/settings
-!/.emacs.d/settings/*
+!/.emacs.d/settings/*.el
 !/.gitignore.d
 !/.gitignore.d/emacs
