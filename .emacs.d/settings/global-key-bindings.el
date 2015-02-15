@@ -124,9 +124,9 @@
 (global-set-key (kbd "C-S-SPC")          'set-rectangular-region-anchor)
 (global-set-key (kbd "C-S-c C-c")        'mc/mark-all-like-this-dwim)
 (global-set-key (kbd "C-.")              'mc/mark-next-like-this)
-(global-set-key (kbd "C-M-.")            'mc/skip-and-mark-next-like-this)
+(global-set-key (kbd "C-M-.")            'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-,")              'mc/mark-previous-like-this)
-(global-set-key (kbd "C-M-,")            'mc/skip-and-mark-previous-like-this)
+(global-set-key (kbd "C-M-,")            'mc/skip-to-previous-like-this)
 (global-set-key (kbd "C-;")              'mc/mark-all-in-region)
 (global-set-key (kbd "C-:")              'mc/mark-more-like-this-extended)
 
