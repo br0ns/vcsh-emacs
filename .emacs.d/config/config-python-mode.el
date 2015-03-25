@@ -1,3 +1,5 @@
+(require 'settings)
+
 (when (boundp 'company-backends)
   (add-to-list 'company-backends 'company-anaconda)
   )
@@ -52,6 +54,9 @@
     )
   (diminish 'anaconda-mode)
   (add-hook 'after-save-hook 'prelude-python-mode-set-encoding nil 'local)
+  (setq tab-width config-tab-width)
+  (setq python-indent config-tab-width)
+  (setq electric-indent-chars (delq ?: electric-indent-chars))
   )
 
 (add-hook 'python-mode-hook 'config-python-mode-defaults)

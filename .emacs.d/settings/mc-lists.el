@@ -3,8 +3,26 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-delete-forward
+        c-electric-paren
+        c-electric-pound
+        c-electric-semi&comma
+        c-electric-star
+        evil-numbers/dec-at-pt
+        evil-numbers/inc-at-pt
+        indent-for-tab-command
+        kill-or-join-next-line
+        mc-search-backward
+        mc-search-forward
+        nav-half-page-down
+        nav-half-page-up
+        nav-next-line
+        nav-previous-line
         prelude-move-beginning-of-line
+        subword-left
+        subword-right
         whole-line-or-region-kill-region
+        whole-line-or-region-kill-ring-save
         whole-line-or-region-yank
         ))
 

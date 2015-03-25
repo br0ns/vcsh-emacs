@@ -74,3 +74,4 @@
 (require 'defuns-files)
 (require 'defuns-misc)
 (require 'evil-numbers)
+(put 'scroll-left 'disabled nil)
