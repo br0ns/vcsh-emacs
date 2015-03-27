@@ -136,7 +136,6 @@
     git-timemachine
     gitconfig-mode
     gitignore-mode
-    god-mode
     highlight-chars
     ido-ubiquitous
     minimap

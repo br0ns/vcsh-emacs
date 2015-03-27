@@ -83,7 +83,6 @@
 (global-set-key (kbd "<f5>")             'revert-buffer-noconfirm)
 (global-set-key (kbd "C->")              'increase-indentation)
 (global-set-key (kbd "C-<")              'decrease-indentation)
-(global-set-key (kbd "<escape>")         'god-local-mode)
 (global-set-key (kbd "C-c e")            'eval-and-replace)
 
 (global-set-key [remap kill-line]        'kill-or-join-next-line)
