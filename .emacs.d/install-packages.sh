@@ -1,5 +1,6 @@
 #!/bin/sh
-cd "$(readlink -f $(dirname 0))"
+set -e
+cd "$(readlink -f $(dirname $0))"
 $(which emacs) -Q --batch -l "install-packages.el"
 rm -f "install-packages.el~"
 rm -rf "auto-save-list"
