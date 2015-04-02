@@ -7,6 +7,7 @@
         c-electric-paren
         c-electric-pound
         c-electric-semi&comma
+        c-electric-slash
         c-electric-star
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
