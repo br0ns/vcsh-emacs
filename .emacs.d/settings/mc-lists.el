@@ -3,18 +3,24 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-colon
         c-electric-delete-forward
         c-electric-paren
         c-electric-pound
         c-electric-semi&comma
         c-electric-slash
         c-electric-star
+        c-indent-line-or-region
+        erlang-electric-comma
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
         indent-for-tab-command
         kill-or-join-next-line
+        kmacro-end-or-call-macro
+        kmacro-start-macro-or-insert-counter
         mc-search-backward
         mc-search-forward
+        nav-forward-blank-line
         nav-half-page-down
         nav-half-page-up
         nav-next-line
