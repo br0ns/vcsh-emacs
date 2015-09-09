@@ -65,6 +65,7 @@
 ;; Modes
 (require 'config-prog-mode)
 (require 'config-python-mode)
+(require 'config-haskell-mode)
 
 ;; Defuns
 (require 'defuns-packages)
