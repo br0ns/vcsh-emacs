@@ -20,6 +20,7 @@
         kill-or-join-next-line
         kmacro-end-or-call-macro
         kmacro-start-macro-or-insert-counter
+        markdown-exdent-or-delete
         mc-search-backward
         mc-search-forward
         nav-forward-blank-line
