@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-kill-sentence
         c-electric-colon
         c-electric-delete-forward
         c-electric-paren
@@ -20,6 +21,7 @@
         kill-or-join-next-line
         kmacro-end-or-call-macro
         kmacro-start-macro-or-insert-counter
+        markdown-exdent-or-delete
         mc-search-backward
         mc-search-forward
         nav-forward-blank-line
