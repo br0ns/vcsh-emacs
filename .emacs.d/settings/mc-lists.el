@@ -30,6 +30,7 @@
         nav-next-line
         nav-previous-line
         prelude-move-beginning-of-line
+        sgml-slash
         smex
         subword-left
         subword-right
