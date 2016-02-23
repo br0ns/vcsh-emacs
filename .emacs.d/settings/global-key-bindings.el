@@ -34,6 +34,7 @@
 (global-set-key (kbd "C-x M-f")          'ido-find-file-other-window)
 (global-set-key (kbd "H-r")              'prelude-recentf-ido-find-file)
 (global-set-key (kbd "C-c y")            'bury-buffer)
+(global-set-key (kbd "C-M-g")            'rgrep)
 
 ;;; Bookmarks
 (global-set-key (kbd "<f2>")             'bm-toggle)
@@ -71,7 +72,7 @@
   'company-show-doc-buffer)
 
 ;;; Anaconda
-(global-set-key (kbd "M-,")              'anaconda-nav-pop-marker)
+(global-set-key (kbd "M->")              'anaconda-mode-go-back)
 
 ;;; Misc
 (global-set-key (kbd "M-/")              'hippie-expand)
@@ -84,9 +85,16 @@
 (global-set-key (kbd "C->")              'increase-indentation)
 (global-set-key (kbd "C-<")              'decrease-indentation)
 (global-set-key (kbd "C-c e")            'eval-and-replace)
-
+(global-set-key (kbd "C-c C-e")          'eval-and-replace)
 (global-set-key [remap kill-line]        'kill-or-join-next-line)
 (global-set-key (kbd "H-j")              'join-next-line)
+
+;; Align
+(global-set-key (kbd "C-x C-a")          nil)
+(global-set-key (kbd "C-x C-a a")        'align)
+(global-set-key (kbd "C-x C-a s")        'align-string)
+(global-set-key (kbd "C-x C-a r")        'align-regexp)
+(global-set-key (kbd "C-x C-a S")        'align-all-strings)
 
 ;;; evil-numbers
 (global-set-key (kbd "C-M-<right>")      'evil-numbers/inc-at-pt)
@@ -128,6 +136,8 @@
 (global-set-key (kbd "C-M-,")            'mc/skip-to-previous-like-this)
 (global-set-key (kbd "C-;")              'mc/mark-all-in-region)
 (global-set-key (kbd "C-:")              'mc/mark-more-like-this-extended)
+;; TODO: remap <return> to mc/keyboard-quit in mark-more-like-this,
+;;       mark-next-like-this and friends
 
 ;; expand-region.el
 (global-set-key (kbd "C-'")              'er/expand-region)

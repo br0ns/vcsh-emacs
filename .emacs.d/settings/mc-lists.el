@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        asm-comment
         backward-kill-sentence
         c-electric-colon
         c-electric-delete-forward
@@ -14,6 +15,7 @@
         c-indent-line-or-region
         electric-newline-and-maybe-indent
         erlang-electric-comma
+        eval-and-replace
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
         haskell-indentation-delete-char
@@ -24,11 +26,13 @@
         markdown-exdent-or-delete
         mc-search-backward
         mc-search-forward
+        nav-backward-blank-line
         nav-forward-blank-line
         nav-half-page-down
         nav-half-page-up
         nav-next-line
         nav-previous-line
+        open-line-above
         prelude-move-beginning-of-line
         sgml-slash
         smex
@@ -41,4 +45,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        anaconda-mode-find-definitions
+        describe-key-briefly
+        ido-switch-buffer
+        set-rectangular-region-anchor
         ))
