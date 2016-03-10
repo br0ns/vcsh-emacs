@@ -51,6 +51,7 @@
 (global-set-key (kbd "C-c C-c M-x")      'execute-extended-command)
 
 ;; Clever newlines
+(global-set-key (kbd "<C-return>")       'newline)
 (global-set-key (kbd "<S-return>")       'open-line-above)
 (global-set-key (kbd "<M-return>")       'open-line-below)
 (global-set-key (kbd "<M-S-return>")     'break-line)

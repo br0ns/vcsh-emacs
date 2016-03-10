@@ -19,6 +19,7 @@
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
         haskell-indentation-delete-char
+        increase-indentation
         indent-for-tab-command
         kill-or-join-next-line
         kmacro-end-or-call-macro
@@ -33,6 +34,7 @@
         nav-next-line
         nav-previous-line
         open-line-above
+        open-line-below
         prelude-move-beginning-of-line
         sgml-slash
         smex

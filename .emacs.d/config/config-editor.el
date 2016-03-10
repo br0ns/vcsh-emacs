@@ -65,6 +65,8 @@
                  (make-directory (file-name-directory buffer-file-name) t))))
 
 ;; Delete trailing white space when saving
+;; XXX: Re-read configuration option on save
+;;    : Add 'save-buffer-with-trailing-whitespace
 (when config-clean-whitespace-on-save
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (add-hook 'after-save-hook
