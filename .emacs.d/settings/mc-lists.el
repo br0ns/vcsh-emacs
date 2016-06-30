@@ -13,6 +13,7 @@
         c-electric-slash
         c-electric-star
         c-indent-line-or-region
+        duplicate-current-line-or-region
         electric-newline-and-maybe-indent
         erlang-electric-comma
         eval-and-replace
