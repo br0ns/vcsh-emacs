@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        asm-colon
         asm-comment
         backward-kill-sentence
         c-electric-colon

@@ -173,6 +173,7 @@ by `require-package`."
 
 (defvar config-indent-sensitive-modes
   '(conf-mode
+    asm-mode
     coffee-mode
     haml-mode
     python-mode
