@@ -118,8 +118,8 @@
 
 (defvar config-packages
   '(
-    ace-jump-mode
     ace-jump-buffer
+    ace-jump-mode
     adaptive-wrap
     anaconda-mode
     anzu
@@ -128,16 +128,17 @@
     company
     company-anaconda
     dash
-    discover-my-major
     diminish
+    discover-my-major
     expand-region
-    flycheck
     flx-ido
+    flycheck
     git-timemachine
     gitconfig-mode
     gitignore-mode
     highlight-chars
     ido-ubiquitous
+    markdown-mode
     minimap
     move-text
     multifiles
