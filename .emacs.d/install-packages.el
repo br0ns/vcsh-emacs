@@ -7,6 +7,7 @@
   (require 'config-package)
   (require 'defuns-packages)
 
+  (package-refresh-contents)
   (install-packages)
 
   (byte-recompile-directory user-emacs-directory 0 t)

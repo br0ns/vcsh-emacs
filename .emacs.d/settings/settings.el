@@ -144,6 +144,7 @@
     multifiles
     multiple-cursors
     projectile
+    php-mode
     rust-mode
     smart-mode-line
     smart-mode-line-powerline-theme
