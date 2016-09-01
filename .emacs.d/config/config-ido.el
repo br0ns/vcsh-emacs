@@ -1,9 +1,9 @@
 (require 'ido)
 (require 'ido-ubiquitous)
-(require 'flx-ido)
+;; (require 'flx-ido)
 
 (setq ido-enable-prefix nil
-      ido-enable-flex-matching t
+      ;; ido-enable-flex-matching t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
       ido-max-prospects 10
@@ -59,8 +59,26 @@
 
 ;;; smex, remember recently and most frequently used commands
 (require 'smex)
-(setq smex-save-file (expand-file-name "smex-items" config-savefiles-dir))
-(smex-initialize)
+(setq smex-save-file (expand-file-name "smex-items" config-savefiles-dir)
+      smex-flex-matching nil
+      )
+;;; delayed init
+(global-set-key [(meta x)]
+                (lambda ()
+                  (interactive)
+                  (or (boundp 'smex-cache)
+                      (smex-initialize))
+                  (global-set-key [(meta x)] 'smex)
+                  (smex)))
+
+(global-set-key [(shift meta x)]
+                (lambda ()
+                  (interactive)
+                  (or (boundp 'smex-cache)
+                      (smex-initialize))
+                  (global-set-key [(shift meta x)] 'smex-major-mode-commands)
+                  (smex-major-mode-commands)))
+;; (smex-initialize)
 
 ;; Do not confirm a new file or buffer
 (setq-default confirm-nonexistent-file-or-buffer nil)
