@@ -67,6 +67,7 @@
 (require 'config-python-mode)
 (require 'config-haskell-mode)
 (require 'config-asm-mode)
+(require 'config-tablegen-mode)
 
 ;; Defuns
 (require 'defuns-packages)

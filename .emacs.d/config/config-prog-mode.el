@@ -2,13 +2,37 @@
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
   )
 
+(defface comment-annotation-success
+  '((t (:weight bold :foreground "#8ae234")))
+  ""
+  )
+(defface comment-annotation-failure
+  '((t (:weight bold :foreground "#ef2929")))
+  ""
+  )
+(defface comment-annotation-comment
+  '((t (:weight bold :foreground "#729fcf")))
+  ""
+  )
+(defface comment-annotation-warning
+  '((t (:weight bold :foreground "#f57900")))
+  ""
+)
+
 (defun config-font-lock-comment-annotations ()
   "Highlight a bunch of well known comment annotations.
 
 This functions should be added to the hooks of major modes for programming."
   (font-lock-add-keywords
-   nil '(("\\<\\(\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\|XXX\\):\\)"
-          1 'font-lock-warning-face t)
+   nil '(
+         ("\\<\\(\\(NOTE\\|NB\\):\\)"
+          1 'comment-annotation-warning t)
+         ("\\<\\(\\(TODO\\|XXX\\)\\(\\[.*\\]\\)?:\\)"
+          1 'comment-annotation-failure t)
+         ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\(OK\\|Ok\\|ok\\|FIXED\\|Fixed\\|fixed\\).*\\)\\]:\\)"
+          1 'comment-annotation-success t)
+         ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\)\\]:\\)"
+          3 'comment-annotation-comment t)
          )
    )
   )

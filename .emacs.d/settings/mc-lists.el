@@ -38,6 +38,7 @@
         open-line-above
         open-line-below
         prelude-move-beginning-of-line
+        rectangle-mark-mode
         sgml-slash
         smex
         subword-left
