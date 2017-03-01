@@ -112,7 +112,7 @@
   ""
   )
 
-(defvar config-tab-width 4
+(defvar config-tab-width 2
   "The default tab width"
   )
 

@@ -78,6 +78,14 @@
 ;;; Misc
 (global-set-key (kbd "M-/")              'hippie-expand)
 (global-set-key (kbd "M-d")              'duplicate-current-line-or-region)
+(global-set-key (kbd "M-D")              (lambda ()
+                                           (interactive)
+                                           (progn
+                                             (whole-line-or-region-comment-dwim-3 nil)
+                                             (whole-line-or-region-yank nil)
+                                             )
+                                           )
+                )
 ;; move `kill-word' since it used to be at `M-d'
 (global-set-key (kbd "C-S-d")            'kill-word)
 (global-set-key (kbd "C-z")              'ido-switch-buffer)
