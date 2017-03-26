@@ -14,12 +14,14 @@
         c-electric-slash
         c-electric-star
         c-indent-line-or-region
+        decrease-indentation
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
         erlang-electric-comma
         eval-and-replace
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
+        forward-sentence
         haskell-indentation-delete-char
         increase-indentation
         indent-for-tab-command
@@ -44,6 +46,7 @@
         smex
         subword-left
         subword-right
+        tex-terminate-paragraph
         whole-line-or-region-kill-region
         whole-line-or-region-kill-ring-save
         whole-line-or-region-yank
