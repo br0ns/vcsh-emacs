@@ -81,7 +81,7 @@
 (global-set-key (kbd "M-D")              (lambda ()
                                            (interactive)
                                            (progn
-                                             (whole-line-or-region-comment-dwim-3 nil)
+                                             (comment-dwim nil)
                                              (whole-line-or-region-yank nil)
                                              )
                                            )
@@ -89,10 +89,10 @@
 ;; move `kill-word' since it used to be at `M-d'
 (global-set-key (kbd "C-S-d")            'kill-word)
 (global-set-key (kbd "C-z")              'ido-switch-buffer)
-(global-set-key (kbd "C-q")              'comment-dwim)
-(global-set-key (kbd "<f5>")             'revert-buffer-noconfirm)
-(global-set-key (kbd "C->")              'increase-indentation)
-(global-set-key (kbd "C-<")              'decrease-indentation)
+;; (global-set-key (kbd "C-q")              'comment-line)
+;; (global-set-key (kbd "<f5>")             'revert-buffer-noconfirm)
+;; (global-set-key (kbd "C->")              'increase-indentation)
+;; (global-set-key (kbd "C-<")              'decrease-indentation)
 (global-set-key (kbd "C-c e")            'eval-and-replace)
 (global-set-key (kbd "C-c C-e")          'eval-and-replace)
 (global-set-key [remap kill-line]        'kill-or-join-next-line)
@@ -123,7 +123,8 @@
 
 ;;; Flyspell
 (require 'flyspell)
-(define-key flyspell-mode-map (kbd "<f6>")   'flyspell-correct-word-before-point)
+(define-key flyspell-mode-map (kbd "<f6>")   'flyspell-correct-word-before-point
+  )
 (define-key flyspell-mode-map (kbd "C-<f6>") 'ispell-change-dictionary)
 
 ;;; discover-my-major.el

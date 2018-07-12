@@ -1,5 +1,6 @@
 (require 'ido)
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode 1)
 ;; (require 'flx-ido)
 
 (setq ido-enable-prefix nil

@@ -136,8 +136,8 @@
     git-timemachine
     gitconfig-mode
     gitignore-mode
-    highlight-chars
-    ido-ubiquitous
+    ; highlight-chars
+    ido-completing-read+
     markdown-mode
     minimap
     move-text
@@ -154,7 +154,7 @@
     tangotango-theme
     undo-tree
     whole-line-or-region
-    zoom-frm
+    ; zoom-frm
     )
   "A list of packages that should be installed"
   )
