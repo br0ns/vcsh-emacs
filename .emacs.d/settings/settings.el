@@ -125,6 +125,7 @@
     anzu
     bm
     browse-kill-ring
+    comment-dwim-2
     company
     company-anaconda
     dash

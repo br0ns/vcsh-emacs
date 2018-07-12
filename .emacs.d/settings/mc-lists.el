@@ -15,6 +15,7 @@
         c-electric-slash
         c-electric-star
         c-indent-line-or-region
+        comment-dwim-2
         decrease-indentation
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
