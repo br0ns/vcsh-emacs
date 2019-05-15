@@ -1,8 +1,17 @@
 ;;; Navigation
 (global-set-key [remap next-line]           'nav-next-line)
 (global-set-key [remap previous-line]       'nav-previous-line)
+(global-set-key [remap right-char]          'right-char)
+(global-set-key [remap left-char]           'left-char)
 (global-set-key [remap forward-paragraph]   'nav-forward-blank-line)
 (global-set-key [remap backward-paragraph]  'nav-backward-blank-line)
+;; XXX: Make this work
+;; (global-set-key (kbd "M-]")                 (lambda ()
+;;                                               (interactive)
+;;                                               (nav-forward-blank-line)
+;;                                               (nav-previous-line)
+;;                                               ))
+(global-set-key (kbd "M-[")                 'nav-backward-blank-line)
 (global-set-key (kbd "M-<down>")            'nav-scroll-next-line)
 (global-set-key (kbd "M-<up>")              'nav-scroll-previous-line)
 (global-set-key (kbd "C-M-<down>")          'nav-scroll-forward-blank-line)
@@ -72,17 +81,18 @@
 (define-key company-active-map (kbd "?")
   'company-show-doc-buffer)
 
-;;; Anaconda
-(global-set-key (kbd "M->")              'anaconda-mode-go-back)
-
 ;;; Misc
 (global-set-key (kbd "M-/")              'hippie-expand)
 (global-set-key (kbd "M-d")              'duplicate-current-line-or-region)
+(global-set-key (kbd "M-D")
+                'comment-and-duplicate-current-line-or-region)
 (global-set-key (kbd "M-D")              (lambda ()
                                            (interactive)
                                            (progn
                                              (comment-dwim-2 nil)
-                                             (whole-line-or-region-yank nil)
+                                             (save-excursion
+                                               (whole-line-or-region-yank nil)
+                                               )
                                              )
                                            )
                 )
@@ -124,9 +134,9 @@
 
 ;;; Flyspell
 (require 'flyspell)
-(define-key flyspell-mode-map (kbd "<f6>")   'flyspell-correct-word-before-point
-  )
-(define-key flyspell-mode-map (kbd "C-<f6>") 'ispell-change-dictionary)
+(define-key flyspell-mode-map (kbd "M-'")
+  'flyspell-check-previous-highlighted-word-2)
+(define-key flyspell-mode-map (kbd "<f6>") 'ispell-change-dictionary)
 
 ;;; discover-my-major.el
 (global-set-key (kbd "C-h C-m")          'discover-my-major)
@@ -192,5 +202,11 @@
 (global-set-key (kbd "<f12>")            'minimap-mode)
 (global-set-key (kbd "<f11>")            'toggle-mode-line)
 (global-set-key (kbd "M-<f11>")          'menu-bar-mode)
+
+(global-set-key (kbd "M-h")              'highlight-symbol)
+
+;;; Disable scrolling left/right
+(global-unset-key (kbd "C-<prior>"))
+(global-unset-key (kbd "C-<next>"))
 
 (provide 'global-key-bindings)

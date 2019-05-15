@@ -46,7 +46,18 @@
   (indent-for-tab-command)
   )
 
+;; (defun comment-or-uncomment-line-or-region (
+
 (defun duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated."
+  (interactive "*p")
+  (if (region-active-p)
+      (duplicate-region arg)
+    (duplicate-current-line arg))
+  )
+
+(defun comment-and-duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
 If there's no region, the current line will be duplicated."
   (interactive "*p")

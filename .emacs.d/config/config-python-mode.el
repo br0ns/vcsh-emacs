@@ -1,8 +1,17 @@
 (require 'settings)
 
-(when (boundp 'company-backends)
-  (add-to-list 'company-backends 'company-anaconda)
-  )
+;; (when (boundp 'company-backends)
+;;   (add-to-list 'company-backends 'company-anaconda)
+;;   )
+
+(eval-after-load "company"
+  '(add-to-list 'company-backends 'company-anaconda))
+
+(setenv "PYTHONPATH"
+        (shell-command-to-string
+         "python -c \"import sys ; print ':'.join(sys.path)\""
+         )
+        )
 
 (defun prelude-python--encoding-comment-required-p ()
   (re-search-forward "[^\0-\177]" nil t))

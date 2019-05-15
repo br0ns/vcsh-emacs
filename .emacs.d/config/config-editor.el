@@ -160,10 +160,11 @@
 (set-default 'fill-column config-fill-column)
 
 ;; Fill rules
-;; TODO: fix this
-;; (require 'filladapt)
-;; (diminish 'filladapt-mode)
-;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; TODO: Fix filladapt
+;;(require 'filladapt)
+;;(setq-default filladapt-mode t)
+;;(diminish 'filladapt-mode)
+(setq c-block-comment-prefix " * ")
 
 ;; Enable functions that are disabled by default
 (put 'set-goal-column 'disabled nil)
@@ -272,20 +273,30 @@ indent yanked text (with prefix arg don't indent)."
       (let ((transient-mark-mode nil))
         (yank-advised-indent-function (region-beginning) (region-end)))))
 
-(setq abbrev-file-name (expand-file-name "abbrev-defs" config-savefiles-dir))
-(setq save-abbrevs t)
-(setq-default abbrev-mode t)
-(diminish 'abbrev-mode)
-(when (file-exists-p abbrev-file-name)
-    (quietly-read-abbrev-file)
-    )
+;; Configure abbreviations
+(setq save-abbrevs nil)
+(setq-default abbrev-mode nil)
+;; (setq abbrev-file-name (expand-file-name "abbrev-defs" config-savefiles-dir))
+;; (setq save-abbrevs t)
+;; (setq-default abbrev-mode t)
+;; (diminish 'abbrev-mode)
+;; (when (file-exists-p abbrev-file-name)
+;;     (quietly-read-abbrev-file)
+;;     )
+
 
 ;; Enable semantic mode everywhere
 (semantic-mode t)
 
-;; Enable filladapt mode everywhere
-(require 'filladapt)
-(filladapt-mode t)
+;; Show matching parenthesis
+(show-paren-mode t)
+(require 'highlight-parentheses)
+(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
+
+;; Give colors to identifiers depending on their name; see
+;; `config-rainbow-identifiers.el`
+(require 'rainbow-identifiers)
+(add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
 
 (add-hook 'emacs-startup-hook 'toggle-window-split)
 

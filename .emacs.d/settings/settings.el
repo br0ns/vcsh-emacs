@@ -138,6 +138,8 @@
     gitconfig-mode
     gitignore-mode
     ; highlight-chars
+    highlight-symbol
+    highlight-parentheses
     ido-completing-read+
     markdown-mode
     minimap
@@ -146,12 +148,14 @@
     multiple-cursors
     projectile
     php-mode
+    rainbow-identifiers
     rust-mode
     smart-mode-line
     smart-mode-line-powerline-theme
     smartparens
     smartrep
     smex
+    sml-mode
     tangotango-theme
     undo-tree
     whole-line-or-region

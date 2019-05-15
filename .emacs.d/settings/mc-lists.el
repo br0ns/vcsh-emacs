@@ -6,6 +6,7 @@
         asm-colon
         asm-comment
         backward-kill-sentence
+        bm-toggle
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
@@ -14,6 +15,7 @@
         c-electric-semi&comma
         c-electric-slash
         c-electric-star
+        c-hungry-delete-forward
         c-indent-line-or-region
         comment-dwim-2
         decrease-indentation
@@ -32,6 +34,7 @@
         kmacro-end-or-call-macro
         kmacro-start-macro-or-insert-counter
         markdown-exdent-or-delete
+        markdown-outdent-or-delete
         mc-search-backward
         mc-search-forward
         nav-backward-blank-line

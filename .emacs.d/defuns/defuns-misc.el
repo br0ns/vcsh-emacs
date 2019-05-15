@@ -1,5 +1,5 @@
 (defun toggle-mode-line () "toggles the modeline on and off"
-  (interactive) 
+  (interactive)
   (setq mode-line-format
         (if (equal mode-line-format nil)
             (default-value 'mode-line-format)) )
@@ -87,5 +87,41 @@
                     (string= (car imenu--rescan-item) name))
           (add-to-list 'symbol-names (substring-no-properties name))
           (add-to-list 'name-and-pos (cons (substring-no-properties name) position))))))))
+
+;; Copy'n'paste of `flyspell-check-previous-highlighted-word`, but call
+;; `flyspell-correct-word-before-point` instead of `ispell-word` to get Ace
+;; popup.
+(defun flyspell-check-previous-highlighted-word-2 (&optional arg)
+  "Correct the closest previous word that is highlighted as misspelled.
+This function scans for a word which starts before point that has been
+highlighted by Flyspell as misspelled.  If it finds one, it proposes
+a replacement for that word.  With prefix arg N, check the Nth word
+before point that's highlighted as misspelled."
+  (interactive "P")
+  (let ((pos1 (point))
+	(pos  (point))
+	(arg  (if (or (not (numberp arg)) (< arg 1)) 1 arg))
+	ov ovs)
+    (if (catch 'exit
+	  (while (and (setq pos (previous-overlay-change pos))
+		      (not (= pos pos1)))
+	    (setq pos1 pos)
+	    (if (> pos (point-min))
+		(progn
+		  (setq ovs (overlays-at pos))
+		  (while (consp ovs)
+		    (setq ov (car ovs))
+		    (setq ovs (cdr ovs))
+		    (if (and (flyspell-overlay-p ov)
+			     (= 0 (setq arg (1- arg))))
+			(throw 'exit t)))))))
+	(save-excursion
+	  (goto-char pos)
+      (flyspell-correct-word-before-point)
+      ;; (ispell-word)
+	  (setq flyspell-word-cache-word nil) ;; Force flyspell-word re-check
+	  (flyspell-word))
+      (error "No word to correct before point"))))
+
 
 (provide 'defuns-misc)

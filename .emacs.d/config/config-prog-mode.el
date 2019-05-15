@@ -17,7 +17,7 @@
 (defface comment-annotation-warning
   '((t (:weight bold :foreground "#f57900")))
   ""
-)
+  )
 
 (defun config-font-lock-comment-annotations ()
   "Highlight a bunch of well known comment annotations.
@@ -31,6 +31,8 @@ This functions should be added to the hooks of major modes for programming."
           1 'comment-annotation-failure t)
          ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\(OK\\|Ok\\|ok\\|FIXED\\|Fixed\\|fixed\\).*\\)\\]:\\)"
           1 'comment-annotation-success t)
+         ("\\<\\(\\(CONSIDER\\):\\)"
+          1 'comment-annotation-comment t)
          ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\)\\]:\\)"
           3 'comment-annotation-comment t)
          )

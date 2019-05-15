@@ -168,7 +168,7 @@ decimal: [0-9]+, e.g. 42 or 23"
   (cond
    ((= base 2) (evil-numbers/format-binary num width))
    ((= base 8) (format (format "%%0%do" width) num))
-   ((= base 16) (format (format "%%0%dX" width) num))
+   ((= base 16) (format (format "%%0%dx" width) num))
    (t "")))
 
 (defun evil-numbers/format-binary (number &optional width fillchar)

@@ -68,6 +68,7 @@
 (require 'config-haskell-mode)
 (require 'config-asm-mode)
 (require 'config-tablegen-mode)
+(require 'config-rainbow-identifiers)
 
 ;; Defuns
 (require 'defuns-packages)
