@@ -22,13 +22,19 @@
         duplicate-current-line-or-region
         electric-newline-and-maybe-indent
         erlang-electric-comma
+        erlang-electric-gt
+        erlang-electric-newline
+        erlang-fill-paragraph
         eval-and-replace
         evil-numbers/dec-at-pt
         evil-numbers/inc-at-pt
+        fill-paragraph
         forward-sentence
+        haskell-indentation-common-electric-command
         haskell-indentation-delete-char
         increase-indentation
         indent-for-tab-command
+        isearch-yank-word-or-char
         join-next-line
         kill-or-join-next-line
         kmacro-end-or-call-macro
@@ -37,6 +43,7 @@
         markdown-outdent-or-delete
         mc-search-backward
         mc-search-forward
+        move-text-up
         nav-backward-blank-line
         nav-forward-blank-line
         nav-half-page-down
@@ -48,6 +55,7 @@
         prelude-move-beginning-of-line
         rectangle-mark-mode
         sgml-slash
+        sh-assignment
         smex
         subword-left
         subword-right
@@ -60,7 +68,9 @@
 (setq mc/cmds-to-run-once
       '(
         anaconda-mode-find-definitions
+        c-fill-paragraph
         describe-key-briefly
+        ido-list-directory
         ido-switch-buffer
         set-rectangular-region-anchor
         ))

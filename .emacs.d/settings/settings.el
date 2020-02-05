@@ -51,28 +51,42 @@
 
 (defvar config-preferred-extensions
   '(".py"
+    ".pypy"
     ".c"
     ".tex"
     ".org"
     ".txt"
     ".sml"
     ".hs"
+    ".erl"
+    ".sh"
+    ".fish"
+    ".md"
     ".emacs")
   "Extensions to list first when finding files"
 )
 
 (defvar config-ignored-extensions
-  '(".hi"
+  '(
+    ;; Haskell
+    ".hi"
+    ;; Binaries
     ".so"
     ".o"
+    ;; Latex
     ".aux"
     ".snm"
     ".nav"
     ".toc"
     ".vrb"
+    ;; Python
     ".pyc"
     ".pyo"
-    ".elc")
+    ;; Lisp
+    ".elc"
+    ;; Erlang
+    ".beam"
+    )
   "Extensions to ignore when finding files"
   )
 
@@ -123,6 +137,7 @@
     adaptive-wrap
     anaconda-mode
     anzu
+    auto-insert
     bm
     browse-kill-ring
     comment-dwim-2
@@ -132,6 +147,7 @@
     diminish
     discover-my-major
     expand-region
+    filladapt
     flx-ido
     flycheck
     git-timemachine

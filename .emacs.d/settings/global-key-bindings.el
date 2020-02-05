@@ -84,6 +84,7 @@
 ;;; Misc
 (global-set-key (kbd "M-/")              'hippie-expand)
 (global-set-key (kbd "M-d")              'duplicate-current-line-or-region)
+;; TODO: Fix this:
 (global-set-key (kbd "M-D")
                 'comment-and-duplicate-current-line-or-region)
 (global-set-key (kbd "M-D")              (lambda ()
@@ -96,6 +97,9 @@
                                              )
                                            )
                 )
+(global-set-key (kbd "M-n")              'insert-current-date)
+(global-set-key (kbd "M-N")              'insert-current-date-long)
+(global-set-key (kbd "M-t")              'insert-current-time)
 
 ;; move `kill-word' since it used to be at `M-d'
 (global-set-key (kbd "C-S-d")            'kill-word)

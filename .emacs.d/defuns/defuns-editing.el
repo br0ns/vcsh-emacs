@@ -1,3 +1,5 @@
+(require 'comment-dwim-2)
+
 (defun increase-indentation ()
   "Increase identation of region if mark is active"
   (interactive)
@@ -99,7 +101,9 @@ region-end is used."
 
 (defun join-next-line ()
   (interactive)
-  (join-line t)
+  (forward-line 1)
+  (cd2/uncomment-line)
+  (join-line)
 )
 
 (defun kill-or-join-next-line ()

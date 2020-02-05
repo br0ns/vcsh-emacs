@@ -70,4 +70,7 @@
 
 (add-hook 'python-mode-hook 'config-python-mode-defaults)
 
+;; Hook for .pypy files
+(add-to-list 'auto-mode-alist '("\\.pypy\\'" . python-mode))
+
 (provide 'config-python-mode)

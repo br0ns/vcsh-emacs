@@ -62,6 +62,8 @@
 (require 'config-multiple-cursors)
 (require 'config-company)
 
+(require 'config-auto-insert)
+
 ;; Modes
 (require 'config-prog-mode)
 (require 'config-python-mode)

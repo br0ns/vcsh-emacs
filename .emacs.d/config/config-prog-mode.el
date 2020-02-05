@@ -25,16 +25,24 @@
 This functions should be added to the hooks of major modes for programming."
   (font-lock-add-keywords
    nil '(
-         ("\\<\\(\\(NOTE\\|NB\\):\\)"
+         ;; NOTE: Mucho      NB: importante     HACK: I use this marker often...
+         ("\\<\\(\\(NOTE\\|NB\\|HACK\\):\\)"
           1 'comment-annotation-warning t)
-         ("\\<\\(\\(TODO\\|XXX\\)\\(\\[.*\\]\\)?:\\)"
+
+         ;; TODO: Later      XXX: I said, later!
+         ("\\<\\(\\(TODO\\|XXX\\)\\(\\[[^]]*\\]\\)?:\\)"
           1 'comment-annotation-failure t)
-         ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\(OK\\|Ok\\|ok\\|FIXED\\|Fixed\\|fixed\\).*\\)\\]:\\)"
+
+         ;; TODO[OK]: A-ok   XXX[fixed]: No, really
+         ("\\<\\(\\(TODO\\|XXX\\)\\[\\([^]]*\\(OK\\|Ok\\|ok\\|FIXED\\|Fixed\\|fixed\\)[^]]*\\)\\]:\\)"
           1 'comment-annotation-success t)
+         ("\\<\\(\\(TODO\\|XXX\\)\\[\\([^]]*\\)\\]:\\)"
+          3 'comment-annotation-comment t)
+
+         ;; CONSIDER: Rewriting .emacs'n'friends
          ("\\<\\(\\(CONSIDER\\):\\)"
           1 'comment-annotation-comment t)
-         ("\\<\\(\\(TODO\\|XXX\\)\\[\\(.*\\)\\]:\\)"
-          3 'comment-annotation-comment t)
+
          )
    )
   )

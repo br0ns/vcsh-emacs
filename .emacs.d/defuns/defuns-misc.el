@@ -123,5 +123,15 @@ before point that's highlighted as misspelled."
 	  (flyspell-word))
       (error "No word to correct before point"))))
 
+(setq-default shell-file-name "/bin/bash")
+
+(defun insert-current-date () (interactive)
+       (insert (shell-command-to-string "echo -n $(date +%Y-%m-%d)")))
+
+(defun insert-current-time () (interactive)
+       (insert (shell-command-to-string "echo -n $(date +%T)")))
+
+(defun insert-current-date-long () (interactive)
+       (insert (shell-command-to-string "echo -n $(date +'%A, %B %e, %Y')")))
 
 (provide 'defuns-misc)
