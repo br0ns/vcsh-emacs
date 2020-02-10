@@ -2,6 +2,8 @@
 
 ;; Based on Emacs Prelude
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; Enable backtrace when errors occur
 ;; (setq debug-on-error t)
 
