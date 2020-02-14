@@ -137,7 +137,7 @@
     adaptive-wrap
     anaconda-mode
     anzu
-    auto-insert
+    ; auto-insert
     bm
     browse-kill-ring
     comment-dwim-2
