@@ -1,3 +1,4 @@
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (progn
   (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
   (require 'settings)
